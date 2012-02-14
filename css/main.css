@@ -1,3 +1,52 @@
+@keyframes red_color_change {
+  0% {
+    color: black; }
+
+  100% {
+    color: red; } }
+
+@keyframes orange_color_change {
+  from {
+    color: black; }
+
+  to {
+    color: orange; } }
+
+@keyframes green_color_change {
+  0% {
+    color: black; }
+
+  100% {
+    color: green; } }
+
+@keyframes blue_color_change {
+  0% {
+    color: black; }
+
+  100% {
+    color: blue; } }
+
+@keyframes indigo_color_change {
+  0% {
+    color: black; }
+
+  100% {
+    color: indigo; } }
+
+@keyframes violet_color_change {
+  0% {
+    color: black; }
+
+  100% {
+    color: violet; } }
+
+@keyframes spin_left {
+  0% {
+    transform: rotate(0deg); }
+
+  100% {
+    transform: rotate(360deg); } }
+
 html {
   padding: 35px 0 35px 0; }
 
@@ -37,11 +86,32 @@ body {
     #header h1 a {
       text-decoration: none;
       color: #333; }
+    #header h1 span {
+      font-weight: 400;
+      margin: -3px;
+      display: inline-block; }
+    #header h1 a:hover .c1, #header h1 a:hover .c8 {
+      animation: red_color_change 1.5s alternate, spin_left 1.5s; }
+    #header h1 a:hover .c2, #header h1 a:hover .c9 {
+      animation: orange_color_change 1.5s alternate, spin_left 1.5s; }
+    #header h1 a:hover .c3, #header h1 a:hover .c7 {
+      animation: green_color_change 1.5s alternate, spin_left 1.5s; }
+    #header h1 a:hover .c4 {
+      animation: blue_color_change 1.5s alternate, spin_left 1.5s; }
+    #header h1 a:hover .c5 {
+      animation: indigo_color_change 1.5s alternate, spin_left 1.5s; }
+    #header h1 a:hover .c6 {
+      animation: violet_color_change 1.5s alternate, spin_left 1.5s; }
   #header h2 {
     font-size: 23px;
     font-weight: 300; }
     #header h2 img {
       margin-left: 3px; }
+
+.github img {
+  position: absolute;
+  top: 0;
+  right: 0; }
 
 #content .inner {
   text-align: left;
@@ -108,53 +178,67 @@ body {
   #footer .about {
     float: left; }
     #footer .about img {
-      float: left; }
+      float: left;
+      height: 80px;
+      border-radius: 10px; }
     #footer .about div {
       padding-left: 94px;
       width: 140px; }
 
-.my_pic {
-  float: right; }
-
 .about_head {
-  width: 550px;
-  margin-bottom: 45px; }
+  width: 650px; }
+  .about_head img {
+    display: block;
+    float: right;
+    margin: 15px;
+    border-radius: 10px; }
 
-.projects_container {
+.section_header {
+  margin-top: 30px; }
+
+.info_container {
   border-top: #ddd double 3px;
   border-bottom: #ddd double 3px;
-  padding: 35px 0 0 0; }
-
-table.projects td {
-  padding-bottom: 35px; }
-table.projects td.img {
-  text-align: center;
-  vertical-align: middle; }
-table.projects td.desc {
-  padding-left: 45px; }
-
-.bubble {
-  color: #fff;
-  font-size: 13px;
-  background: #607890;
-  -moz-border-radius: 5px;
-  -webkit-border-radius: 5px;
-  padding: 10px;
-  position: relative; }
-  .bubble .tip {
-    background: url(/images/triangle.png) no-repeat 0 0;
-    width: 10px;
-    height: 11px;
-    position: absolute;
-    top: 19px;
-    left: -10px; }
-  .bubble a {
-    text-decoration: none;
-    color: #fff; }
-    .bubble a:hover {
-      text-decoration: underline; }
+  padding: 15px 0 0 0; }
+  .info_container .sub_header {
+    font-size: 20px;
+    margin-bottom: 10px;
+    display: block;
+    font-weight: normal; }
 
 #disqus_thread {
   margin-top: 45px; }
   #disqus_thread h3 {
     font-size: 19px; }
+
+/* Pretty print */
+.prettyprint .str,
+.prettyprint .atv {
+  /* a markup attribute value */
+  color: #008a35; }
+
+.prettyprint .kwd,
+.prettyprint .tag {
+  /* a markup tag name */
+  color: #0066cc; }
+
+.prettyprint .com {
+  /* a comment */
+  color: #7f7f7f;
+  font-style: italic; }
+
+.prettyprint .lit {
+  /* a literal value */
+  color: #7f0000; }
+
+.prettyprint .pun,
+.prettyprint .opn,
+.prettyprint .clo {
+  color: #7f7f7f; }
+
+.prettyprint .typ,
+.prettyprint .atn,
+.prettyprint .dec,
+.prettyprint .var {
+  /* a declaration; a variable name */
+  color: #7f007f; }
