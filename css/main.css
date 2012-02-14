@@ -198,7 +198,6 @@ body {
 
 .info_container {
   border-top: #ddd double 3px;
-  border-bottom: #ddd double 3px;
   padding: 15px 0 0 0; }
   .info_container .sub_header {
     font-size: 20px;

@@ -5,13 +5,13 @@ title: CSS3 Color Animations
 
 CSS3 animations are one of the hot new toys now available for use in modern browsers.  One of the cool things you can do with them is change the color of an element using exclusively CSS.  Previously a technique like this was only possible using <a href="https://developer.mozilla.org/en/window.setInterval">JavaScript's setInterval function</a> to gradually change the appropriate property of the element. See <a href="http://jqueryui.com/demos/animate/">jQuery UI's animate demos</a> for a good example.
 
-<h3>Getting Started</h3>
+### Getting Started
 
 Let's start with a basic example (note - Whether or not you see the animation depends on whether your browser supports CSS3 animations.  You can check at <a href="http://caniuse.com/css-animation">caniuse.com</a>).
 
 <iframe style="width: 100%; height: 300px" src="http://jsfiddle.net/RfYMA/embedded/result,html,css/" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
 
-<h3>Syntax</h3>
+### Syntax
 
 Alright, let's break this down one section at a time.
 
@@ -45,7 +45,7 @@ The <code>animation</code> property is how you define a <a href="https://develop
 	</li>
 </ul>
 
-<h3>Prefixes</h3>
+### Prefixes
 
 The vendor prefixes are necessary because CSS3 animations are still considered an experimental feature.  However, the syntax for this animations has been standardized and is consistent across modern browsers.  For an up to date list of what browsers support CSS3 animations and which prefixes to use check out the <a href="http://caniuse.com/css-animation">CSS animation page at caniuse.com</a>.
 
@@ -53,7 +53,7 @@ If you get sick of typing out all the vendor prefixes you're not alone.  <a href
 
 Another option is <a href="http://prefixr.com/">Prefixr</a> by Jeffrey Way of <a href="http://net.tutsplus.com/">nettuts</a>.  It's designed for you to be able to copy and paste your code in, run it, and have the appropriate prefixes added automatically.
 
-<h3>Keyframes</h3>
+### Keyframes
 
 <pre class="prettyprint lang-css linenums">
 @-webkit-keyframes color_change {
@@ -102,11 +102,11 @@ If the animation has more than 2 steps, they can be listed using multiple steps 
 100% { background-color: red; }
 </pre>
 
-<h3>Real World Example</h3>
+### Real World Example
 
 Since the box hover demo was rather contrived, I thought I'd provide an example of how you could use this technique in the real world.  On buttons, a common UI pattern is to provide the user with visual feedback that they're on the button by applying a subtle color change.  This is usually done by applying a different <code>background-color</code> on the hover pseudoclass of the button as such:
 
-<pre class="prettyprint lang-css">
+<pre class="prettyprint lang-css linenums">
 button {
 &nbsp;&nbsp;&nbsp;&nbsp;background-color: pink;
 }
@@ -119,13 +119,13 @@ To improve upon this, we can add a CSS 3 color animation to gradually make the c
 
 <iframe style="width: 100%; height: 300px" src="http://jsfiddle.net/PTfZD/2/embedded/result,html,css/" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
 
-<h3>Falling Back Gracefully</h3>
+### Falling Back Gracefully
 
 Since CSS3 animations are only present in modern browsers, there's a good chance a number of your users won't have them available.  Luckily, CSS3 animations fallback gracefully to browsers that don't support them.  If the browser doesn't know how to handle a CSS animation, it just ignores the CSS rules.  Therefore, just don't use CSS animations to perform functionality that is vital to your site or application, it should simply enhance the user experience.
 
 In the button example above if the browser can't perform the animation, the animated button will simply fallback on the hover button's behavior.
 
-<pre class="prettyprint lang-css">
+<pre class="prettyprint lang-css linenums">
 button {
 &nbsp;&nbsp;&nbsp;&nbsp;background-color: pink;
 }
@@ -140,7 +140,7 @@ button:hover {
 }
 </pre>
 
-<h3>Detect Support and Polyfill</h3>
+### Detect Support and Polyfill
 
 If you have a CSS color animation that you absolutely must have work on all browsers back to IE6, you can do so by detecting support via <a href="modernizr.com">Modernizr</a>, and falling back to <a href="http://jqueryui.com/demos/animate/">jQuery UI's animation</a>.
 
@@ -169,6 +169,6 @@ Modernizr.load({
 });
 </pre>
 
-<h3>Summary</h3>
+### Summary
 
 CSS 3 color animations can be used in modern browsers today.  For most use cases not having the animation happen in unsupported browsers isn't a problem, and, if it is, jQuery UI can be used to polyfill the functionality.
