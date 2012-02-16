@@ -1,4 +1,5 @@
 $main: #E4D4A3;
+$tierOneWidth: 825px;
 
 @keyframes red_color_change {
 	0% { color: black; }
@@ -35,8 +36,9 @@ $main: #E4D4A3;
 	100% { transform: rotate(360deg); }
 }
 
-html {
-    padding: 35px 0 35px 0;
+@keyframes rotate_3d {
+	0% { transform: rotateY(1deg); }
+	100% { transform: rotateY(180deg); }
 }
 
 body {
@@ -44,6 +46,7 @@ body {
     font-family: 'Helvetica Neue', Helvetica;
     font-size: 14px;
     color: #666;
+    margin: 25px 0;
 }
 
 #header {
@@ -55,16 +58,21 @@ body {
     
     .inner {
         text-align: left;
-        width: 725px;
+        width: 95%;
+        max-width: 850px;
         margin: auto;
+        position: relative;
     }
     
     ul {
         float: right;
         list-style-type: none;
+        position: absolute;
+        top: 0;
+        right: 10px;
         
         li {
-            float: right;
+            float: left;
             margin-left: 18px;
             margin-top: 10px;
             font-size: 23px;
@@ -80,7 +88,26 @@ body {
             }
         }    
         
+    	@media all and (max-width: $tierOneWidth) {
+    		position: inherit;
+    		float: left;
+    		margin: 5px 0 -15px 0;
+    		
+    		li {
+    			a {
+    				font-size: 18px;
+    				font-weight: 400;
+    				color: white;
+    				border-radius: 5px;
+    				padding: 5px;
+    				background-color: #607890;
+    				border: 2px solid black;
+    			}
+    		}
+		}
     }
+    
+    @media all and (max-width: $tierOneWidth) { padding-bottom: 70px; }
     
     h1 {
         font-size: 59px;
@@ -134,16 +161,12 @@ body {
     }
 }
 
-.github img {
-	position: absolute;
-	top: 0;
-	right: 0;
-}
-
 #content {
+	clear: both;
     .inner {
         text-align: left;
-        width: 725px;
+        width: 95%;
+        max-width: 850px;
         margin: auto;
     }
 }
@@ -197,7 +220,8 @@ body {
     
     .inner {
         text-align: left;
-        width: 725px;
+        width: 95%;
+        max-width: 850px;
         margin: auto;
     }
     
@@ -249,6 +273,10 @@ body {
             border-radius: 10px;
         }
         
+        img:hover {
+        	animation: rotate_3d 1s infinite alternate;
+        }
+        
         div {
             padding-left: 94px;
             width: 140px;
@@ -257,8 +285,6 @@ body {
 }
 
 .about_head {
-    width: 650px;
-    
     img {
     	display: block;
     	float: right;
