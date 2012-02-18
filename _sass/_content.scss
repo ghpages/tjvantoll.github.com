@@ -1,5 +1,6 @@
 $main: #E4D4A3;
 $tierOneWidth: 825px;
+$tierTwoWidth: 400px;
 
 @keyframes red_color_change {
 	0% { color: black; }
@@ -54,7 +55,9 @@ body {
     padding: 25px;
     background: $main;
     margin-bottom: 45px;
+    @media all and (max-width: $tierOneWidth) { margin-bottom: 30px; }
     color: #333;
+    @media all and (max-width: $tierOneWidth) { padding-bottom: 70px; }
     
     .inner {
         text-align: left;
@@ -88,7 +91,7 @@ body {
             }
         }    
         
-    	@media all and (max-width: $tierOneWidth) {
+    	@media screen and (max-width: $tierOneWidth) {
     		position: inherit;
     		float: left;
     		margin: 5px 0 -15px 0;
@@ -105,12 +108,22 @@ body {
     			}
     		}
 		}
-    }
-    
-    @media all and (max-width: $tierOneWidth) { padding-bottom: 70px; }
+		
+		@media only screen and (max-width : $tierTwoWidth) {
+			li {
+				margin: 3px 6px;
+				a {
+					padding: 5px;
+					font-size: 14px;
+				}
+			}
+		}
+	}
     
     h1 {
         font-size: 59px;
+        @media only screen and (max-width : $tierOneWidth) { font-size: 50px; }
+        @media only screen and (max-width : $tierTwoWidth) { font-size: 40px; }
         font-weight: bold;
         
         a {
@@ -154,6 +167,8 @@ body {
     
     h2 {
         font-size: 23px;
+        @media only screen and (max-width : $tierOneWidth) { font-size: 21px; }
+        @media only screen and (max-width : $tierTwoWidth) { font-size: 19px; }
         font-weight: 300;
         img {
             margin-left: 3px;
@@ -168,6 +183,7 @@ body {
         width: 95%;
         max-width: 850px;
         margin: auto;
+        overflow: hidden;
     }
 }
     
@@ -266,6 +282,7 @@ body {
     
     .about {
         float: left;
+        @media only screen and (max-width : 650px) { margin-top: 20px; }
         
         img {
             float: left;
@@ -318,6 +335,14 @@ body {
 }
 
 /* Pretty print */
+@media only screen and (max-width : $tierOneWidth) {
+	.prettyprint {
+		font-size: 14px;
+		padding: 10px 2px;
+		
+		ol { list-style-type: none; margin: 0; padding: 0; }
+	}
+}
 
 .prettyprint .str, /* string content */
 .prettyprint .atv { /* a markup attribute value */
