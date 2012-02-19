@@ -1,0 +1,31 @@
+@media only screen and (max-width : $tierOneWidth) {
+	.prettyprint { font-size: 14px; padding: 10px 2px 10px 10px; }
+}
+
+/* Drop the line numbers at 700px */
+@media only screen and (max-width : 700px) {
+	ol { list-style-type: none; margin: 0; padding: 0; }
+}
+
+/* http://code.google.com/p/google-code-prettify/source/browse/trunk/styles/sons-of-obsidian.css */
+.prettyprint {
+	white-space: pre;
+	margin-bottom: 1em;
+	border: 0px solid #888;
+	background: #000;
+	
+	.str { color: #EC7600; }
+	.kwd { color: #93C763; }
+	.com { color: #66747B; }
+	.typ { color: #678CB1; }
+	.lit { color: #FACD22; }
+	.pun { color: #F1F2F3; }
+	.pln { color: #F1F2F3; }
+	.tag { color: #8AC763; }
+	.atn { color: #E0E2E4; }
+	.atv { color: #EC7600; }
+	.dec { color: purple; }
+	ol.linenums { margin-top: 0; margin-bottom: 0; }
+	li.L0, li.L1, li.L2, li.L3, li.L4, li.L5, li.L6, li.L7, li.L8, li.L9 { color: #555; }
+	li.L1, li.L3, li.L5, li.L7, li.L9 { background: #111; }
+}

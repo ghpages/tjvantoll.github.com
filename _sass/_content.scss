@@ -37,11 +37,6 @@ $tierTwoWidth: 400px;
 	100% { transform: rotate(360deg); }
 }
 
-@keyframes rotate_3d {
-	0% { transform: rotateY(1deg); }
-	100% { transform: rotateY(180deg); }
-}
-
 body {
     text-align: center;
     font-family: 'Helvetica Neue', Helvetica;
@@ -54,7 +49,7 @@ body {
     font-family: 'Lato';
     padding: 25px;
     background: $main;
-    margin-bottom: 45px;
+    margin-bottom: 35px;
     @media all and (max-width: $tierOneWidth) { margin-bottom: 30px; }
     color: #333;
     @media all and (max-width: $tierOneWidth) { padding-bottom: 70px; }
@@ -186,6 +181,8 @@ body {
         overflow: hidden;
     }
 }
+
+.readMore { display: block; font-size: 1.2em; color: blue; margin-top: 15px; }
     
 .post {
     margin-bottom: 55px;
@@ -290,10 +287,6 @@ body {
             border-radius: 10px;
         }
         
-        img:hover {
-        	animation: rotate_3d 1s infinite alternate;
-        }
-        
         div {
             padding-left: 94px;
             width: 140px;
@@ -334,39 +327,4 @@ body {
     }
 }
 
-/* Pretty print */
-@media only screen and (max-width : $tierOneWidth) {
-	.prettyprint {
-		font-size: 14px;
-		padding: 10px 2px;
-		
-		ol { list-style-type: none; margin: 0; padding: 0; }
-	}
-}
 
-.prettyprint .str, /* string content */
-.prettyprint .atv { /* a markup attribute value */
-  color: rgb(0, 138, 53); 
-}  
-.prettyprint .kwd, /* a keyword */
-.prettyprint .tag { /* a markup tag name */
-  color: rgb(0, 102, 204);
-}
-.prettyprint .com { /* a comment */
-  color: rgb(127, 127, 127); 
-  font-style: italic; 
-}  
-.prettyprint .lit { /* a literal value */
-  color: rgb(127, 0, 0);
-}  
-.prettyprint .pun, /* punctuation, lisp open bracket, lisp close bracket */
-.prettyprint .opn, 
-.prettyprint .clo { 
-  color: rgb(127, 127, 127); 
-}
-.prettyprint .typ, /* a type name */
-.prettyprint .atn, /* a markup attribute name */ 
-.prettyprint .dec, 
-.prettyprint .var { /* a declaration; a variable name */
-  color: rgb(127, 0, 127);
-} 
