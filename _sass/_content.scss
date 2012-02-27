@@ -182,7 +182,7 @@ body {
     }
 }
 
-.readMore { display: block; font-size: 1.2em; color: blue; margin-top: 15px; }
+.readMore { display: block; font-size: 1.2em; margin-top: 15px; }
     
 .post {
     margin-bottom: 55px;
@@ -277,20 +277,18 @@ body {
         margin-right: 25px;
     }
     
+    .html5 {
+    	display: block;
+    	margin-top: 10px;
+    }
+    
     .about {
         float: left;
         @media only screen and (max-width : 650px) { margin-top: 20px; }
-        
-        img {
-            float: left;
-            height: 80px;
-            border-radius: 10px;
-        }
-        
-        div {
-            padding-left: 94px;
-            width: 140px;
-        }
+
+	    #pictureCube {
+    		margin-bottom: 20px;
+    	}
     }
 }
 

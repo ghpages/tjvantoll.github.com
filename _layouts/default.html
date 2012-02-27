@@ -14,15 +14,33 @@
 		
 		<link href='http://fonts.googleapis.com/css?family=Lato:light,regular,bold' rel='stylesheet' />
 		
-		<link href="/css/style.css" media="screen" rel="stylesheet" /> 
+		<link href="/css/style.css" rel="stylesheet" />
 
+		<!--
 		<script src="/scripts/prefixfree.min.js"></script>
+		<script src="/scripts/modernizr.2.5.2.custom.js"></script>
 		<script src="/scripts/prettify.js" defer></script>
 		<script src="/scripts/lang-css.js" defer></script>
+		<script src="/scripts/PictureCube.js" defer></script>
+		-->
+		<script src="/scripts/build/main.js"></script>
+		
 		<script>
-			//IE8 users just won't get the pretty print.  They'll live.
 			if (document.addEventListener) {
-				document.addEventListener('DOMContentLoaded', function() { prettyPrint(); });
+				document.addEventListener('DOMContentLoaded', function() {
+					prettyPrint();
+					
+					if (Modernizr.csstransforms3d) {
+						new PictureCube('pictureCube', [
+							'/images/me/1.jpg',
+							'/images/me/2.jpg',
+							'/images/kids/1.jpg',
+							'/images/me/3.jpg',
+							'/images/izzie/2.jpg',
+							'/images/kids/2.jpg'																					
+						]).cycle(5000);
+					}
+				});
 			}
 		</script>
 		
@@ -93,11 +111,18 @@
                         </tr>
                     {% endfor %}
                     </table>
-                </div>
+                    
+	                <a href="http://www.w3.org/html/logo/" class="html5">
+						<img src="http://www.w3.org/html/logo/badge/html5-badge-h-css3-graphics-performance-semantics.png" width="229" height="64" alt="HTML5 Powered with CSS3 / Styling, Graphics, 3D &amp; Effects, Performance &amp; Integration, and Semantics" title="HTML5 Powered with CSS3 / Styling, Graphics, 3D &amp; Effects, Performance &amp; Integration, and Semantics" />
+					</a>                    
+                </div>               
+                
                 <div class="about">
                     <h3><a href="/about/">About Me</a></h3>
                     
-                    <a href="/about/"><img src="/images/me.jpg" alt="ME" /></a>
+                    <a href="/about/">
+                    	<div id="pictureCube"></div>
+                    </a>
                     <div>
                         Web developer, traveler, ex world champion <a href="/about/">Read more</a>
                     </div>

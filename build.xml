@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<project name="tjvantoll.com" default="prod" basedir="/Applications/XAMPP/xamppfiles/htdocs/tjvantoll.github.com">
+
+    <description>Client-side ANT build file example</description>
+
+    <target name="-load.properties"
+        description="Set properties for this build">
+        <!--YUI Compressor location-->
+        <property name="yui.dir" value="/Users/tj3/Web/yuicompressor-2.4.7/build/yuicompressor-2.4.7.jar"/>
+        <!--Source JS dir-->
+        <property name="src.js.dir" value="${basedir}/scripts"/>
+        <!--Rhino dir-->
+        <property name="js.jar" value="/Users/tj3/Web/rhino1_7R3/js.jar"/>
+        <!--Output dir-->
+        <property name="build.dir" value="scripts"/>
+        <!--Build version information -->
+        <property name="build.major" value="1"/>
+        <property name="build.minor" value="1"/>
+    </target>
+
+    <!--Create build directories-->
+    <target name="-init" depends="-load.properties"
+        description="Create build directory structure">
+        
+        <!--Delete previous build files-->
+        <delete dir="${build.dir}/build"/>
+        
+        <!--Recreate the build directories-->
+        <mkdir dir="${build.dir}/build"/>
+    </target>
+
+    <!--Concatenate JS files-->
+    <target name="-js.concatenate"
+        description="Concatenates specified JavaScript files">
+        <concat destfile="${build.dir}/build/main.js">
+            <fileset 
+                dir="${src.js.dir}"
+                includes="modernizr.custom.2.5.2.js" />              
+            <fileset 
+                dir="${src.js.dir}"
+                includes="prefixfree.min.js" />  
+            <fileset 
+                dir="${src.js.dir}"
+                includes="prettify.js" />  
+            <fileset 
+                dir="${src.js.dir}"
+                includes="lang-css.js" />  
+            <fileset 
+                dir="${src.js.dir}"
+                includes="PictureCube.js" />                                                                  
+        </concat>
+        <echo>Finished</echo>
+    </target>
+
+    <!--Minify JS files-->
+    <target name="-js.minify" depends="-js.concatenate" 
+        description="Minifies JavaScript files">
+        <apply executable="java" parallel="false" dest="${build.dir}/scripts">
+            <fileset 
+                dir="${build.dir}/build" 
+                includes="main.js"/>
+            <arg line="-jar"/>
+            <arg path="${yui.dir}"/>
+            <srcfile/>
+            <arg line="-o"/>
+            <mapper type="glob" from="*.js" to="*-min.js"/>
+            <targetfile/>
+        </apply>
+        <echo>Finished</echo>
+    </target>
+
+    <!--Build-->
+    <target name="prod" 
+        description="Builds project files for production use"
+        depends="
+            -load.properties, 
+            -init, 
+            -js.concatenate, 
+            -js.minify">
+    </target>
+</project>
