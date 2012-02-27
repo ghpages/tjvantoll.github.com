@@ -15,7 +15,7 @@ CSS3 3D transforms were recently added in Firefox 10 and <a href="http://blogs.m
 
 So I decided I wanted to start messing around with this.
 
-Note: Google Chrome technically supports 3D transforms, but [Modernizr reports a false positive](https://github.com/Modernizr/Modernizr/issues/240).  So if you're viewing this blog in Chrome you'll see an incorrect warning that the browser doesn't support transforms.  However, despite being supported, 3D transforms are still very buggy in Chrome and PictureCube.js does not yet support it, more on that [later](#chrome).
+Note: Google Chrome supports 3D transforms, but [Modernizr will report a false positive](https://github.com/Modernizr/Modernizr/issues/240) if [Chrome has disabled GPU acceleration](http://blog.chromium.org/2011/03/gpu-acceleration-old-drivers.html).  So if you're using Chrome you may or may not see a warning at the top of the screen saying that the demos won't work (since I use Modernizr to detect whether to display that warning).  I've also found that if Chrome does disable hardware acceleration, some of the demos in this post are a bit choppy, and occasionally don't work.  That's one of the downsides with working something so new, all the kinks haven't been worked out quite yet.
 
 ### Getting Started
 
@@ -205,17 +205,9 @@ Plus, jQuery plugins require some extra boilerplate to maintain state, which is 
 
 The current biggest limitation of the PictureCube implementation is that it has a hardcoded 100px height and 100px width.  Eventually I plan on moving these declarations from CSS to JS so that it can be adjusted on the fly.
 
-<a name="chrome"></a>
-### Google Chrome
-3D transform support is in Google Chrome but it is very buggy.  For one, [Modernizr](http://modernizr.com) reports that Chrome does not support transforms due to a bug in its usage with [media queries](https://developer.mozilla.org/en/CSS/Media_queries). (see issues [https://github.com/Modernizr/Modernizr/issues/240](https://github.com/Modernizr/Modernizr/issues/240) & [https://github.com/Modernizr/Modernizr/issues/394](https://github.com/Modernizr/Modernizr/issues/394)).
-
-Additionally there a number of bugs with Chrome's implementation, see [http://code.google.com/p/chromium/issues/detail?id=113450](http://code.google.com/p/chromium/issues/detail?id=113450), [http://code.google.com/p/chromiumembedded/issues/detail?id=395](http://code.google.com/p/chromiumembedded/issues/detail?id=395), and [http://code.google.com/p/chromium/issues/detail?id=110462](http://code.google.com/p/chromium/issues/detail?id=110462)) for some examples.
-
-Because of this, PictureCube.js does not currently work in Google Chrome as of version 17.  If you are interested in seeing the demo below, you'll need to use Firefox, Safari, or an iOS device.
-
 ### Putting it all Together
 
-PictureCube.js is available to be forked or used on Github - [https://github.com/tjvantoll/PictureCube](https://github.com/tjvantoll/PictureCube).  I'm planning on adding the ability to alter the height and width of the cube and adding Chrome support in a future update.  Please give it a shot and let me know what you think.
+PictureCube.js is available to be forked or used on Github - [https://github.com/tjvantoll/PictureCube](https://github.com/tjvantoll/PictureCube).  I'm planning on adding the ability to alter the height and width of the cube in a future update.  Please give it a shot and let me know what you think.
 
 Here's a final cube for you to play with.  Happy hacking.
 
