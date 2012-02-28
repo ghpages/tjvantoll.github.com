@@ -86,12 +86,16 @@ body {
             }
         }    
         
-    	@media screen and (max-width: $tierOneWidth) {
+    	@media all and (max-width: $tierOneWidth) {
     		position: inherit;
     		float: left;
-    		margin: 5px 0 -15px 0;
+    		margin: 5px 0 -20px 0;
+    		right: 0;
     		
     		li {
+    			margin-left: 0;
+    			margin-right: 18px;
+    		
     			a {
     				font-size: 18px;
     				font-weight: 400;
@@ -104,9 +108,9 @@ body {
     		}
 		}
 		
-		@media only screen and (max-width : $tierTwoWidth) {
+		@media all and (max-width : $tierTwoWidth) {
 			li {
-				margin: 3px 6px;
+				margin: 2px 13px 0 0;
 				a {
 					padding: 5px;
 					font-size: 14px;
@@ -117,8 +121,8 @@ body {
     
     h1 {
         font-size: 59px;
-        @media only screen and (max-width : $tierOneWidth) { font-size: 50px; }
-        @media only screen and (max-width : $tierTwoWidth) { font-size: 40px; }
+        @media only screen and (max-width : $tierOneWidth) { font-size: 55px; }
+        @media only screen and (max-width : $tierTwoWidth) { font-size: 45px; }
         font-weight: bold;
         
         a {
