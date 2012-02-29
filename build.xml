@@ -41,6 +41,9 @@
                 includes="prefixfree.min.js" />  
             <fileset 
                 dir="${src.js.dir}"
+                includes="jquery-1.7.1.min.js" />                  
+            <fileset 
+                dir="${src.js.dir}"
                 includes="prettify.js" />  
             <fileset 
                 dir="${src.js.dir}"

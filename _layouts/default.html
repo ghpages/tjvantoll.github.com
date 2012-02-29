@@ -19,29 +19,29 @@
 		<!--
 		<script src="/scripts/prefixfree.min.js"></script>
 		<script src="/scripts/modernizr.2.5.2.custom.js"></script>
+		<script src="/scripts/jquery-1.7.1.min.js"></script>
 		<script src="/scripts/prettify.js" defer></script>
 		<script src="/scripts/lang-css.js" defer></script>
 		<script src="/scripts/PictureCube.js" defer></script>
 		-->
 		<script src="/scripts/build/main.js"></script>
 		
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
 		<script>
-			if (document.addEventListener) {
-				document.addEventListener('DOMContentLoaded', function() {
-					prettyPrint();
-					
-					if (Modernizr.csstransforms3d) {
-						new PictureCube('pictureCube', [
-							'/images/me/1.jpg',
-							'/images/me/2.jpg',
-							'/images/kids/1.jpg',
-							'/images/me/3.jpg',
-							'/images/izzie/2.jpg',
-							'/images/kids/2.jpg'																					
-						]).cycle(5000);
-					}
-				});
-			}
+			$(function() {
+				prettyPrint();
+				
+				if (Modernizr.csstransforms3d) {
+					new PictureCube('pictureCube', [
+						'/images/me/1.jpg',
+						'/images/me/2.jpg',
+						'/images/kids/1.jpg',
+						'/images/me/3.jpg',
+						'/images/izzie/2.jpg',
+						'/images/kids/2.jpg'																					
+					]).cycle(5000);
+				}			
+			});
 		</script>
 		
 		<!--<link rel="alternate" type="application/rss+xml" href="/atom.xml" title="RSS feed" />-->

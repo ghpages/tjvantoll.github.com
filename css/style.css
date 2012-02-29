@@ -461,10 +461,17 @@ body {
 .post {
   margin-bottom: 55px; }
   .post h3 {
-    font-size: 29px;
     font-family: 'Lato';
     font-weight: normal;
-    margin-bottom: 25px; }
+    margin-bottom: 25px;
+    font-size: 29px; }
+    @media all and (max-width: 825px) {
+      .post h3 {
+        font-size: 25px; } }
+    @media all and (max-width: 400px) {
+      .post h3 {
+        font-size: 20px;
+        font-weight: bold; } }
   .post h3 a {
     text-decoration: none; }
   .post h3 a:hover {
@@ -693,16 +700,6 @@ body {
   -ms-transform: translateZ(-50px) rotateX(90deg);
   transform: translateZ(-50px) rotateX(90deg); }
 
-@media only screen and (max-width: 825px) {
-  .prettyprint {
-    font-size: 14px;
-    padding: 10px 2px 10px 10px; } }
-/* Drop the line numbers at 700px */
-@media only screen and (max-width: 700px) {
-  ol {
-    list-style-type: none;
-    margin: 0;
-    padding: 0; } }
 /* http://code.google.com/p/google-code-prettify/source/browse/trunk/styles/sons-of-obsidian.css */
 .prettyprint {
   font-family: 'Droid Sans Mono', 'Courier New', monospace;
@@ -712,7 +709,10 @@ body {
   letter-spacing: -1px;
   line-height: 22px;
   border: 0px solid #888;
-  background: #000; }
+  background: #000;
+  /* Drop the line numbers at 700px */
+  /* For smartphones in portait drop the sizes down low */
+  /* Create a horizontal scroll bar under 600px */ }
   .prettyprint .str {
     color: #EC7600; }
   .prettyprint .kwd {
@@ -742,6 +742,25 @@ body {
     color: #555; }
   .prettyprint li.L1, .prettyprint li.L3, .prettyprint li.L5, .prettyprint li.L7, .prettyprint li.L9 {
     background: #111; }
+  @media only screen and (max-width: 825px) {
+    .prettyprint {
+      font-size: 14px;
+      padding: 10px 2px 10px 10px; } }
+  @media only screen and (max-width: 700px) {
+    .prettyprint ol {
+      list-style-type: none;
+      margin: 0;
+      padding: 0; } }
+  @media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
+    .prettyprint {
+      font-size: 10px;
+      line-height: 14px; } }
+  @media only screen and (max-width: 600px) {
+    .prettyprint {
+      overflow-x: auto; }
+      .prettyprint ol {
+        overflow-x: auto;
+        min-width: 600px; } }
 
 /* 
  * print styles
