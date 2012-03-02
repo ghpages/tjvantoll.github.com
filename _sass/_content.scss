@@ -2,39 +2,76 @@ $main: #E4D4A3;
 $tierOneWidth: 825px;
 $tierTwoWidth: 400px;
 
-@keyframes red_color_change {
-	0% { color: black; }
-	100% { color: red; }
+@keyframes move_up {
+	0% { top: 0px; }
+	10% { top: 5px; }
+	20% { top: 0px; }
+	100% { top: 0px; }
 }
-
-@keyframes orange_color_change {
-	from { color: black; }
-	to { color: orange; }
-}
-
-@keyframes green_color_change {
-	0% { color: black; }
-	100% { color: green; }
-}
-
-@keyframes blue_color_change {
-	0% { color: black; }
-	100% { color: blue; }
-}
-
-@keyframes indigo_color_change {
-	0% { color: black; }
-	100% { color: indigo; }
-}
-
-@keyframes violet_color_change {
-	0% { color: black; }
-	100% { color: violet; }
+@keyframes move_down {
+	0% { top: 0px; }
+	10% { top: -5px; }
+	20% { top: 0px; }
+	100% { top: 0px; }
 }
 
 @keyframes spin_left {
 	0% { transform: rotate(0deg); }
-	100% { transform: rotate(360deg); }
+	20% { transform: rotate(0deg); }
+	30% { transform: rotate(360deg); }
+	40% { transform: rotate(0deg); }
+	100% { transform: rotate(0deg); }	
+}
+
+@keyframes red_color_change {
+	0% { color: black; }
+	40% { color: black; }
+	50% { color: red; }
+	60% { color: black; }
+	100% { color: black; }
+}
+@keyframes orange_color_change {
+	0% { color: black; }
+	40% { color: black; }
+	50% { color: orange; }
+	60% { color: black; }
+	100% { color: black; }
+}
+@keyframes green_color_change {
+	0% { color: black; }
+	40% { color: black; }
+	50% { color: green; }
+	60% { color: black; }
+	100% { color: black; }
+}
+@keyframes blue_color_change {
+	0% { color: black; }
+	40% { color: black; }
+	50% { color: blue; }
+	60% { color: black; }
+	100% { color: black; }
+}
+@keyframes indigo_color_change {
+	0% { color: black; }
+	40% { color: black; }
+	50% { color: indigo; }
+	60% { color: black; }
+	100% { color: black; }
+}
+
+@keyframes flip_it {
+	0% { transform: perspective(400px) translateZ(0px) rotateY(0deg); }
+	60% { transform: perspective(400px) translateZ(0px) rotateY(0deg); }
+	70% { transform: perspective(400px) translateZ(150px) rotateY(180deg); }
+	80% { transform: perspective(400px) translateZ(0px) rotateY(0deg); }
+	100% { transform: perspective(400px) translateZ(0px) rotateY(0deg); }
+}
+
+@keyframes spin_it {
+	0% { transform: rotate(0deg) scale(1); }
+	80% { transform: rotate(0deg) scale(1); }
+	90% { transform: rotate(360deg) scale(0); }
+	100% { transform: rotate(0deg) scale(1); }
 }
 
 body {
@@ -50,9 +87,10 @@ body {
     padding: 25px;
     background: $main;
     margin-bottom: 35px;
-    @media all and (max-width: $tierOneWidth) { margin-bottom: 30px; }
-    color: #333;
-    @media all and (max-width: $tierOneWidth) { padding-bottom: 70px; }
+    color: #333;    
+    @media screen and (max-width: $tierOneWidth) { margin-bottom: 30px; }
+    @media screen and (max-width: $tierOneWidth) { padding-bottom: 70px; }
+    @media screen and (max-width: $tierTwoWidth) { padding-left: 10px; padding-right: 10px; }
     
     .inner {
         text-align: left;
@@ -128,51 +166,39 @@ body {
         a {
             text-decoration: none;
             color: #333;
-        }
-        
-        span {
-        	font-weight: 400;
-        	margin: -3px;
-        	display: inline-block;
-        }
-
-        a:hover {
-        	.c1, .c8 {
-        		animation: red_color_change 1.5s alternate,
-        			spin_left 1.5s;
-        	}
-        	.c2, .c9 {
-        		animation: orange_color_change 1.5s alternate,
-        			spin_left 1.5s;
-        	}
-        	.c3, .c7 {
-				animation: green_color_change 1.5s alternate,
-					spin_left 1.5s;
-        	}
-        	.c4 {
-				animation: blue_color_change 1.5s alternate,
-					spin_left 1.5s;
-        	}
-        	.c5 {
-				animation: indigo_color_change 1.5s alternate,
-					spin_left 1.5s;
-        	}
-        	.c6 {
-        		animation: violet_color_change 1.5s alternate,
-        			spin_left 1.5s;
-        	}
+            letter-spacing: 6px;
+            font-weight: 400;
         }
     }
     
     h2 {
         font-size: 23px;
         @media only screen and (max-width : $tierOneWidth) { font-size: 21px; }
-        @media only screen and (max-width : $tierTwoWidth) { font-size: 19px; }
+        @media only screen and (max-width : $tierTwoWidth) { font-size: 17px; }
         font-weight: 300;
         img {
             margin-left: 3px;
-        }
+        }   
+        
+        span { display: inline-block; letter-spacing: -4px; }  
     }
+    
+    h2:hover {
+    	.a1 { position: relative; animation: move_up 6s; }
+    	.a2 { position: relative; animation: move_down 6s; }
+    	
+    	.b { animation: spin_left 6s; }
+    
+    	.c1 { animation: red_color_change 6s; }
+    	.c2 { animation: orange_color_change 6s; }
+    	.c3 { animation: green_color_change 6s; }
+    	.c4 { animation: blue_color_change 6s; }
+    	.c5 { animation: indigo_color_change 6s; }
+    	
+    	.d { animation: flip_it 6s; }
+    	
+    	.e { animation: spin_it 6s; }
+    }    
 }
 
 #content {
