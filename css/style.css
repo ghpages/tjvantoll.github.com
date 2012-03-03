@@ -1,13 +1,5 @@
 /* 
   HTML5 ✰ Boilerplate 
-  
-  style.css contains a reset, font normalization and some base styles.
-  
-  credit is left where credit is due.
-  much inspiration was taken from these projects:
-    yui.yahooapis.com/2.8.1/build/base/base.css
-    camendesign.com/design/
-    praegnanz.de/weblog/htmlcssjs-kickstart
 */
 /* 
   html5doctor.com Reset Stylesheet (Eric Meyer's Reset Reloaded + HTML5 baseline)
@@ -441,6 +433,14 @@ button {
   100% {
     transform: rotate(0deg) scale(1); } }
 
+/* Add a hover effect for hovering over links */
+@keyframes content_link_hover {
+  from {
+    color: #607890; }
+
+  to {
+    color: #AA5F5D; } }
+
 body {
   text-align: center;
   font-family: 'Helvetica Neue', Helvetica;
@@ -569,6 +569,8 @@ body {
     max-width: 850px;
     margin: auto;
     overflow: hidden; }
+  #content a:hover {
+    animation: content_link_hover 2s; }
 
 .readMore {
   display: block;

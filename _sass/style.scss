@@ -1,13 +1,7 @@
+$linkColor: #607890;
+
 /* 
   HTML5 ✰ Boilerplate 
-  
-  style.css contains a reset, font normalization and some base styles.
-  
-  credit is left where credit is due.
-  much inspiration was taken from these projects:
-    yui.yahooapis.com/2.8.1/build/base/base.css
-    camendesign.com/design/
-    praegnanz.de/weblog/htmlcssjs-kickstart
 */ 
 
 /* 
@@ -110,7 +104,7 @@ html { overflow-y: scroll; }
 /* Accessible focus treatment: people.opera.com/patrickl/experiments/keyboard/test */
 a:hover, a:active { outline: none; }
 
-a, a:active, a:visited { color: #607890; }
+a, a:active, a:visited { color: $linkColor; }
 
 
 ul, ol { margin-left: 1.8em; }

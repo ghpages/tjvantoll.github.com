@@ -74,6 +74,12 @@ $tierTwoWidth: 400px;
 	100% { transform: rotate(0deg) scale(1); }
 }
 
+/* Add a hover effect for hovering over links */
+@keyframes content_link_hover {
+	from { color: $linkColor; }
+	to { color: #AA5F5D }
+}
+
 body {
     text-align: center;
     font-family: 'Helvetica Neue', Helvetica;
@@ -210,6 +216,8 @@ body {
         margin: auto;
         overflow: hidden;
     }
+    
+	a:hover { animation: content_link_hover 2s; }    
 }
 
 .readMore { display: block; font-size: 1.2em; margin-top: 15px; }
