@@ -826,58 +826,67 @@ body {
   letter-spacing: -1px;
   line-height: 22px;
   border: 0px solid #888;
-  background: #000;
-  /* Drop the line numbers at 700px */
+  /* string content */
+  /* a keyword */
+  /* a comment */
+  /* a type name */
+  /* a literal value */
+  /* punctuation, lisp open bracket, lisp close bracket */
+  /* a markup tag name */
+  /* a markup attribute name */
+  /* a markup attribute value */
+  /* a declaration; a variable name */
+  /* a function name */
   /* For smartphones in portait drop the sizes down low */
   /* Create a horizontal scroll bar under 600px */ }
-  .prettyprint .str {
-    color: #EC7600; }
-  .prettyprint .kwd {
-    color: #93C763; }
-  .prettyprint .com {
-    color: #66747B; }
-  .prettyprint .typ {
-    color: #678CB1; }
-  .prettyprint .lit {
-    color: #FACD22; }
-  .prettyprint .pun {
-    color: #F1F2F3; }
   .prettyprint .pln {
-    color: #F1F2F3; }
+    color: #000; }
+  .prettyprint .str {
+    color: #080; }
+  .prettyprint .kwd {
+    color: #008; }
+  .prettyprint .com {
+    color: #800; }
+  .prettyprint .typ {
+    color: #606; }
+  .prettyprint .lit {
+    color: #066; }
+  .prettyprint .pun, .prettyprint .opn, .prettyprint .clo {
+    color: #660; }
   .prettyprint .tag {
-    color: #8AC763; }
+    color: #008; }
   .prettyprint .atn {
-    color: #E0E2E4; }
+    color: #606; }
   .prettyprint .atv {
-    color: #EC7600; }
-  .prettyprint .dec {
-    color: purple; }
+    color: #080; }
+  .prettyprint .dec, .prettyprint .var {
+    color: #606; }
+  .prettyprint .fun {
+    color: red; }
   .prettyprint ol.linenums {
     margin-top: 0;
     margin-bottom: 0; }
+  .prettyprint li {
+    border-left: 2px solid #6CE26C; }
   .prettyprint li.L0, .prettyprint li.L1, .prettyprint li.L2, .prettyprint li.L3, .prettyprint li.L4, .prettyprint li.L5, .prettyprint li.L6, .prettyprint li.L7, .prettyprint li.L8, .prettyprint li.L9 {
-    color: #555; }
+    color: #555;
+    padding-left: 7px; }
   .prettyprint li.L1, .prettyprint li.L3, .prettyprint li.L5, .prettyprint li.L7, .prettyprint li.L9 {
-    background: #111; }
+    background: #f8f8f8; }
   @media only screen and (max-width: 825px) {
     .prettyprint {
       font-size: 14px;
       padding: 10px 2px 10px 10px; } }
-  @media only screen and (max-width: 700px) {
-    .prettyprint ol {
-      list-style-type: none;
-      margin: 0;
-      padding: 0; } }
   @media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
     .prettyprint {
       font-size: 11px;
       line-height: 14px;
-      letter-spacing: 0px; } }
+      letter-spacing: 0px;
+      background-color: blue !important; } }
   @media only screen and (max-width: 600px) {
     .prettyprint {
       overflow-x: auto; }
       .prettyprint ol {
-        overflow-x: auto;
         min-width: 600px; } }
 
 /* 
